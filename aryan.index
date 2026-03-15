@@ -1,0 +1,437 @@
+<html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Bhattarai | Cybersecurity &amp; Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #a1a1aa;
+        }
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+        
+        /* 3D and Hacker Animations */
+        @keyframes float-3d {
+            0%, 100% { transform: perspective(1000px) rotateX(2deg) rotateY(-1deg) translateY(0); }
+            50% { transform: perspective(1000px) rotateX(-1deg) rotateY(2deg) translateY(-10px); }
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #10b981; }
+        }
+        @keyframes grid-move {
+            0% { transform: rotateX(60deg) translateY(0); }
+            100% { transform: rotateX(60deg) translateY(4rem); }
+        }
+
+        .animate-float {
+            animation: float-3d 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+        
+        .typing-effect {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .15em solid #10b981;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        .cyber-grid {
+            position: fixed;
+            inset: -100% 0 -100% 0;
+            background-image: 
+                linear-gradient(to right, rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+            background-size: 4rem 4rem;
+            transform-origin: center top;
+            animation: grid-move 5s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cyber-glow {
+            box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.15);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500/30 selection:text-emerald-200 relative min-h-screen">
+
+    <!-- 3D Background Elements -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none perspective-[1000px] opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#050505] z-10"></div>
+        <div class="cyber-grid"></div>
+    </div>
+
+    <!-- Ambient Glows -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900/20 blur-[120px] rounded-full pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-900/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-zinc-800/50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-mono text-emerald-500 font-semibold tracking-tight text-lg flex items-center gap-2">
+                <iconify-icon icon="solar:shield-keyhole-linear" style="stroke-width: 1.5;"></iconify-icon>
+                AB
+            </a>
+            <div class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-emerald-400 transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
+            </div>
+            <a href="#contact" class="text-xs font-mono text-emerald-400 border border-emerald-500/30 px-3 py-1.5 rounded bg-emerald-500/5 hover:bg-emerald-500/10 transition-colors">
+                &gt; connect_
+            </a>
+        </div>
+    </nav>
+
+    <main class="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24 space-y-32">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="min-h-[80vh] flex flex-col justify-center items-center text-center">
+            
+            <!-- 3D Terminal Window -->
+            <div class="w-full max-w-3xl animate-float cyber-glow bg-[#0a0a0a] border border-zinc-800 rounded-xl overflow-hidden shadow-2xl relative">
+                <!-- Terminal Header -->
+                <div class="bg-zinc-900/50 border-b border-zinc-800 px-4 py-3 flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+                    <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+                    <div class="w-3 h-3 rounded-full bg-emerald-500/50"></div>
+                    <div class="mx-auto text-xs font-mono text-zinc-500">root@ab-system:~</div>
+                </div>
+                
+                <!-- Terminal Body -->
+                <div class="p-8 md:p-12 text-left relative">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-emerald-500/20 to-transparent"></div>
+                    
+                    <p class="font-mono text-emerald-500 mb-4 text-sm md:text-base flex items-center gap-2">
+                        <span class="text-zinc-500">$</span> ./init_profile.sh
+                    </p>
+                    
+                    <h1 class="text-4xl md:text-6xl font-medium text-zinc-100 tracking-tight mb-4 inline-block typing-effect">
+                        Aryan Bhattarai
+                    </h1>
+                    
+                    <div class="font-mono text-sm md:text-base text-zinc-400 mb-8 space-y-2">
+                        <p>&gt; <span class="text-emerald-400">Cybersecurity Enthusiast</span></p>
+                        <p>&gt; <span class="text-emerald-400">Web Developer</span></p>
+                        <p>&gt; <span class="text-emerald-400">Ethical Hacking Learner</span></p>
+                    </div>
+
+                    <blockquote class="border-l-2 border-emerald-500/30 pl-4 py-1 mb-8 text-sm md:text-base text-zinc-400 italic">
+                        “Started with curiosity about how the internet works. Now I build secure websites and study cybersecurity to protect systems from attacks.”
+                    </blockquote>
+
+                    <div class="flex flex-wrap gap-4 text-sm font-mono text-zinc-500 mb-10">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="solar:map-point-linear" style="stroke-width: 1.5;"></iconify-icon>
+                            Kathmandu, Nepal
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="solar:laptop-minimalistic-linear" style="stroke-width: 1.5;"></iconify-icon>
+                            Cybersecurity &amp; Web Dev
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/50 hover:bg-emerald-500 hover:text-zinc-950 px-6 py-2.5 rounded font-mono text-sm transition-all duration-300">
+                            View Projects
+                        </a>
+                        <a href="#contact" class="bg-transparent text-zinc-300 border border-zinc-700 hover:border-zinc-500 px-6 py-2.5 rounded font-mono text-sm transition-all duration-300">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Me -->
+        <section id="about" class="scroll-mt-32">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="text-2xl font-medium text-zinc-100 tracking-tight font-mono">01. About_Me</h2>
+                <div class="h-px bg-zinc-800 flex-1"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-sm md:text-base leading-relaxed">
+                    <p>
+                        Hello, I'm <span class="text-emerald-400 font-mono">Aryan Bhattarai</span>, a cybersecurity enthusiast and web developer from Nepal.
+                    </p>
+                    <p>
+                        My journey into technology started with curiosity about how websites work and how hackers exploit vulnerabilities. Instead of using that knowledge for harm, I focused on learning ethical hacking, security testing, and web development.
+                    </p>
+                    <p>
+                        Over time, I built projects, practiced penetration testing in lab environments, and improved my skills in:
+                    </p>
+                    <ul class="grid grid-cols-2 gap-2 font-mono text-xs md:text-sm text-zinc-400 mt-4">
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-emerald-500"></iconify-icon> Web development</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-emerald-500"></iconify-icon> Security testing</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-emerald-500"></iconify-icon> Network fundamentals</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:alt-arrow-right-linear" class="text-emerald-500"></iconify-icon> Bug hunting</li>
+                    </ul>
+                    <p class="pt-4 border-t border-zinc-800/50">
+                        My goal is to become a professional cybersecurity specialist who helps organizations secure their systems.
+                    </p>
+                </div>
+                
+                <!-- Decorative 3D Element for About -->
+                <div class="relative w-full aspect-square max-w-sm mx-auto perspective-[1000px]">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-transparent border border-zinc-800 rounded-xl transform rotate-y-[-15deg] rotate-x-[10deg] shadow-2xl flex items-center justify-center p-8 backdrop-blur-sm">
+                        <div class="font-mono text-xs text-emerald-500/50 opacity-70 w-full h-full overflow-hidden break-all">
+                            01010111 01100101 01101100 01100011 01101111 01101101 01100101 00100000 01110100 01101111 00100000 01101101 01111001 00100000 01110011 01111001 01110011 01110100 01100101 01101101 00101110 00100000 01010011 01100101 01100011 01110101 01110010 01101001 01110100 01111001 00100000 01101001 01110011 00100000 01101110 01101111 01110100 00100000 01100001 00100000 01110000 01110010 01101111 01100100 01110101 01100011 01110100 00101100 00100000 01100010 01110101 01110100 00100000 01100001 00100000 01110000 01110010 01101111 01100011 01100101 01110011 01110011 00101110
+                        </div>
+                        <iconify-icon icon="solar:lock-password-linear" class="absolute text-6xl text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills -->
+        <section id="skills" class="scroll-mt-32">
+            <div class="flex items-center gap-4 mb-10">
+                <h2 class="text-2xl font-medium text-zinc-100 tracking-tight font-mono">02. Technical_Skills</h2>
+                <div class="h-px bg-zinc-800 flex-1"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Cybersecurity -->
+                <div class="bg-[#0a0a0a] border border-zinc-800 rounded-lg p-6 hover:border-emerald-500/30 transition-colors group">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-emerald-500/10 rounded-md text-emerald-400">
+                            <iconify-icon icon="solar:shield-check-linear" class="text-xl"></iconify-icon>
+                        </div>
+                        <h3 class="text-lg font-medium text-zinc-200 tracking-tight">Cybersecurity</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs">
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Ethical Hacking Basics</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Vulnerability Assessment</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Web App Security</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Bug Bounty Basics</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">OSINT Research</span>
+                    </div>
+                </div>
+
+                <!-- Programming -->
+                <div class="bg-[#0a0a0a] border border-zinc-800 rounded-lg p-6 hover:border-emerald-500/30 transition-colors group">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-emerald-500/10 rounded-md text-emerald-400">
+                            <iconify-icon icon="solar:code-linear" class="text-xl"></iconify-icon>
+                        </div>
+                        <h3 class="text-lg font-medium text-zinc-200 tracking-tight">Programming</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs">
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">HTML</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">CSS</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">JavaScript</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Basic Python</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-[#0a0a0a] border border-zinc-800 rounded-lg p-6 hover:border-emerald-500/30 transition-colors group">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-emerald-500/10 rounded-md text-emerald-400">
+                            <iconify-icon icon="solar:settings-linear" class="text-xl"></iconify-icon>
+                        </div>
+                        <h3 class="text-lg font-medium text-zinc-200 tracking-tight">Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs">
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Kali Linux</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Burp Suite</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Wireshark</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Nmap</span>
+                        <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded text-zinc-300 group-hover:border-zinc-700 transition-colors">Git &amp; GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Projects -->
+        <section id="projects" class="scroll-mt-32">
+            <div class="flex items-center gap-4 mb-10">
+                <h2 class="text-2xl font-medium text-zinc-100 tracking-tight font-mono">03. Executed_Projects</h2>
+                <div class="h-px bg-zinc-800 flex-1"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="group relative bg-[#0a0a0a] border border-zinc-800 rounded-xl p-6 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <iconify-icon icon="solar:folder-with-files-linear" class="text-3xl text-emerald-400"></iconify-icon>
+                            <a href="#" class="text-zinc-500 hover:text-emerald-400 transition-colors">
+                                <iconify-icon icon="solar:link-minimalistic-linear" class="text-xl"></iconify-icon>
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-medium text-zinc-100 tracking-tight mb-3 group-hover:text-emerald-400 transition-colors">Secure Login System</h3>
+                        <p class="text-sm text-zinc-400 mb-6 line-clamp-3">
+                            Built a login system with authentication and password hashing to improve website security and protect user credentials against common database leaks.
+                        </p>
+                        <div class="flex flex-wrap gap-3 font-mono text-xs text-zinc-500">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative bg-[#0a0a0a] border border-zinc-800 rounded-xl p-6 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <iconify-icon icon="solar:monitor-smartphone-linear" class="text-3xl text-emerald-400"></iconify-icon>
+                            <a href="#" class="text-zinc-500 hover:text-emerald-400 transition-colors">
+                                <iconify-icon icon="solar:link-minimalistic-linear" class="text-xl"></iconify-icon>
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-medium text-zinc-100 tracking-tight mb-3 group-hover:text-emerald-400 transition-colors">Personal Portfolio Website</h3>
+                        <p class="text-sm text-zinc-400 mb-6">
+                            Created a responsive personal portfolio website showcasing projects and skills. Features responsive design, clean UI, and fast loading times.
+                        </p>
+                        <div class="flex flex-wrap gap-3 font-mono text-xs text-zinc-500 mt-auto">
+                            <span>Tailwind</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative bg-[#0a0a0a] border border-zinc-800 rounded-xl p-6 hover:-translate-y-1 transition-transform duration-300 md:col-span-2 lg:col-span-1">
+                    <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <iconify-icon icon="solar:bug-minimalistic-linear" class="text-3xl text-emerald-400"></iconify-icon>
+                            <a href="#" class="text-zinc-500 hover:text-emerald-400 transition-colors">
+                                <iconify-icon icon="solar:link-minimalistic-linear" class="text-xl"></iconify-icon>
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-medium text-zinc-100 tracking-tight mb-3 group-hover:text-emerald-400 transition-colors">Basic Vulnerability Scanner</h3>
+                        <p class="text-sm text-zinc-400 mb-6">
+                            A Python-based tool that automates the process of checking target websites for common security misconfigurations and low-hanging fruit issues.
+                        </p>
+                        <div class="flex flex-wrap gap-3 font-mono text-xs text-zinc-500 mt-auto">
+                            <span>Python</span>
+                            <span>Requests</span>
+                            <span>Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5 & 6. Experience & Education -->
+        <section id="experience" class="scroll-mt-32">
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- Experience -->
+                <div>
+                    <div class="flex items-center gap-4 mb-8">
+                        <h2 class="text-2xl font-medium text-zinc-100 tracking-tight font-mono">04. Experience</h2>
+                        <div class="h-px bg-zinc-800 flex-1"></div>
+                    </div>
+                    
+                    <div class="relative pl-6 border-l border-zinc-800 space-y-8">
+                        <div class="relative">
+                            <div class="absolute -left-[31px] bg-[#050505] p-1">
+                                <div class="w-3 h-3 rounded-full border border-emerald-500 bg-[#050505]"></div>
+                            </div>
+                            <h3 class="text-base font-medium text-zinc-200">Cybersecurity Learner &amp; Web Developer</h3>
+                            <p class="text-xs font-mono text-emerald-400 mt-1 mb-3">Self-Study / Independent Projects</p>
+                            <ul class="text-sm text-zinc-400 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5">▹</span>
+                                    Practicing penetration testing in lab environments
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5">▹</span>
+                                    Building websites and learning secure coding practices
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5">▹</span>
+                                    Studying cybersecurity concepts such as network security and vulnerabilities
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <div class="flex items-center gap-4 mb-8">
+                        <h2 class="text-2xl font-medium text-zinc-100 tracking-tight font-mono">05. Education</h2>
+                        <div class="h-px bg-zinc-800 flex-1"></div>
+                    </div>
+                    
+                    <div class="relative pl-6 border-l border-zinc-800 space-y-8">
+                        <div class="relative">
+                            <div class="absolute -left-[31px] bg-[#050505] p-1">
+                                <div class="w-3 h-3 rounded-full border border-zinc-600 bg-[#050505]"></div>
+                            </div>
+                            <h3 class="text-base font-medium text-zinc-200">Class 11 – Computer Science</h3>
+                            <p class="text-xs font-mono text-zinc-500 mt-1">Science Faculty</p>
+                        </div>
+                    </div>
+
+                    <!-- Goals appended below education for layout balance -->
+                    <div class="mt-12">
+                         <div class="flex items-center gap-4 mb-6">
+                            <h2 class="text-xl font-medium text-zinc-100 tracking-tight font-mono">06. Objectives</h2>
+                        </div>
+                        <div class="bg-zinc-900/30 border border-zinc-800/50 p-6 rounded-lg">
+                            <p class="text-sm text-zinc-400 mb-4 font-mono text-xs text-emerald-500/80">// Future targets identified:</p>
+                            <ul class="text-sm text-zinc-300 space-y-3">
+                                <li class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:target-linear" class="text-emerald-500"></iconify-icon>
+                                    Becoming a professional cybersecurity analyst
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:bug-linear" class="text-emerald-500"></iconify-icon>
+                                    Contributing to bug bounty programs
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:shield-up-linear" class="text-emerald-500"></iconify-icon>
+                                    Building secure web applications
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-emerald-500"></iconify-icon>
+                                    Helping organizations protect their systems
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-900 bg-[#050505] py-8 text-center relative z-10">
+        <p class="font-mono text-xs text-zinc-600 mb-2">Designed &amp; Built by Aryan Bhattarai</p>
+        <p class="font-mono text-xs text-emerald-500/50">System.exit(0);</p>
+    </footer>
+
+
+</body></html>
